@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: portfolio-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+server:
+  port: ${PORT:8080}
+
+app:
+  admin:
+    token: ${ADMIN_TOKEN:Gnana@1234}
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
+  contact:
+    notify-email: ${NOTIFY_EMAIL:}
+  mail:
+    enabled: ${MAIL_ENABLED:false}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never

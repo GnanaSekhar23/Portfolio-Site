@@ -1,0 +1,109 @@
+.contact {
+  padding: 100px 0;
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.contact__head .section-sub {
+  margin-bottom: 32px;
+}
+
+.contact__direct {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact__direct dt {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.contact__direct dd a {
+  color: var(--signal-green);
+}
+
+.contact__direct dd a:hover {
+  text-decoration: underline;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field__label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+}
+
+.field input,
+.field textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline-bright);
+  border-radius: 7px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-size: 14.5px;
+  font-family: var(--font-sans);
+  resize: vertical;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--signal-green);
+  outline: none;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.contact__submit {
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.contact__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact__feedback {
+  font-size: 13px;
+}
+
+.contact__feedback--success {
+  color: var(--signal-green);
+}
+
+.contact__feedback--error {
+  color: var(--signal-red);
+}
+
+@media (max-width: 880px) {
+  .contact {
+    padding: 64px 0;
+  }
+  .contact__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}

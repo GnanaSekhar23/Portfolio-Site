@@ -1,0 +1,43 @@
+databases:
+  - name: portfolio-db
+    plan: free
+    databaseName: portfolio
+    user: portfolio
+
+services:
+  - type: web
+    name: portfolio-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DATABASE_HOST
+        fromDatabase:
+          name: portfolio-db
+          property: host
+      - key: DATABASE_PORT
+        fromDatabase:
+          name: portfolio-db
+          property: port
+      - key: DATABASE_NAME
+        fromDatabase:
+          name: portfolio-db
+          property: database
+      - key: DATABASE_USERNAME
+        fromDatabase:
+          name: portfolio-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: portfolio-db
+          property: password
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend.vercel.app
+      - key: MAIL_ENABLED
+        value: "false"
