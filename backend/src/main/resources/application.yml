@@ -9,7 +9,7 @@ server:
 
 app:
   admin:
-    token: ${ADMIN_TOKEN:Gnana@1234}
+    token: ${ADMIN_TOKEN:change-this-token-before-deploying}
   cors:
     allowed-origins: ${ALLOWED_ORIGINS:http://localhost:5173,http://localhost:3000}
   contact:
